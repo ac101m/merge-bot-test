@@ -26,8 +26,8 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "!wip"
-          MERGE_METHOD: "squash"
-          MERGE_METHOD_LABELS: "automerge=merge,autorebase=rebase"
+          MERGE_METHOD_LABELS: "automerge=merge,autorebase=rebase,autosquash=squash"
+          MERGE_METHOD_LABEL_REQUIRED: "true"
           MERGE_DELETE_BRANCH: "true"
           UPDATE_METHOD: "merge"
           MERGE_COMMIT_MESSAGE: "pull-request-title-and-description"
