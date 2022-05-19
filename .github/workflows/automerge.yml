@@ -21,7 +21,7 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: automerge
+      - name: basicautomerge
         uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
@@ -30,9 +30,6 @@ jobs:
           MERGE_DELETE_BRANCH: "true"
           UPDATE_METHOD: "merge"
           MERGE_COMMIT_MESSAGE: "pull-request-title-and-description"
-  releaseautomerge:
-    runs-on: ubuntu-latest
-    steps:
       - name: releaseautomerge
         uses: "pascalgn/automerge-action@v0.12.0"
         env:
