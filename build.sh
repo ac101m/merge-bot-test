@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-gcc hello.c -o hello
-./hello $@
+mkdir -p bin
+gcc hello.c -o bin/hello
+bin/hello $@
