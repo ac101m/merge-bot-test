@@ -18,28 +18,26 @@ on:
       - completed
   status: {}
 jobs:
-  regularmerge:
+  automerge:
     runs-on: ubuntu-latest
     steps:
       - name: automerge
         uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "!wip automerge"
+          MERGE_LABELS: "!wip !releasemerge"
           MERGE_METHOD: "squash"
-          MERGE_METHOD_LABEL_REQUIRED: "true"
           MERGE_DELETE_BRANCH: "true"
           UPDATE_METHOD: "merge"
           MERGE_COMMIT_MESSAGE: "pull-request-title-and-description"
-  releasemerge:
+  releaseautomerge:
     runs-on: ubuntu-latest
     steps:
-      - name: automerge
+      - name: releaseautomerge
         uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "!wip releasemerge"
           MERGE_METHOD: "merge"
-          MERGE_METHOD_LABEL_REQUIRED: "true"
           MERGE_DELETE_BRANCH: "false"
           UPDATE_METHOD: "merge"
