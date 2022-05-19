@@ -25,7 +25,7 @@ jobs:
         uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "!wip !releasemerge"
+          MERGE_LABELS: "!releasemerge,!wip"
           MERGE_METHOD: "squash"
           MERGE_DELETE_BRANCH: "true"
           UPDATE_METHOD: "merge"
@@ -34,7 +34,7 @@ jobs:
         uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "!wip releasemerge"
+          MERGE_LABELS: "releasemerge,!wip"
           MERGE_METHOD: "merge"
           MERGE_DELETE_BRANCH: "false"
           UPDATE_METHOD: "merge"
